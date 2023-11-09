@@ -44,7 +44,7 @@ scoped elab "genStandardHeaders!" names:term : command => do
   let indName := mkIdent `Standard
   let ctors : Array Ident := list.map (Lean.mkIdent ·.1)
   let docstrings : Array (TSyntax _) := list.map (mkDocComment s!"{·.2.2}")
-  
+
   elabCommand (← `(
     /-- Standard headers are common headers that are specially supported
     for performance reasons. -/
@@ -906,7 +906,7 @@ namespace Standard
 
 -- TODO: check if trie is faster than whatever leanc+llvm produce
 -- if you just pattern match on all the strings
-def trie := all.foldl (fun a b => a.insert b.toHeaderString b) (Lean.Parser.Trie.empty)
+def trie := all.foldl (fun a b => a.insert b.toHeaderString b) Lean.Data.Trie.empty
 def parse := trie.find?
 
 end HeaderName.Standard
