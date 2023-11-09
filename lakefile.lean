@@ -7,5 +7,5 @@ package Http
 lean_lib Http
 
 require Qq from git "https://github.com/gebner/quote4" @ "master"
-require std from git "https://github.com/leanprover/std4" @ "main"
+require std from git "https://github.com/leanprover/std4" @ "409a644"
 require Parser from git "https://github.com/fgdorais/lean4-parser" @ "main"
